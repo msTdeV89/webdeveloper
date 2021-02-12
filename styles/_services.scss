@@ -1,0 +1,67 @@
+.services {
+  text-align: center;
+  border-bottom: 2px solid whitesmoke;
+  padding-left: 0;
+  padding-right: 0;
+  &__glide {
+    position: relative;
+    margin: 0 auto;
+    max-width: 300px;
+    overflow: hidden;
+  }
+  &__track {
+    @include flex(row, flex-start, center);
+    width: 2040px;
+    transition: 0.5s ease-in-out;
+  }
+  &__item {
+    @include flex(column, space-around, center);
+    height: 400px;
+    width: 300px;
+    padding: 0 40px;
+  }
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: $main;
+    opacity: 0.2;
+    z-index: 5;
+    &:hover {
+      opacity: 1;
+    }
+    &--left {
+      left: 10px;
+    }
+    &--right {
+      right: 10px;
+    }
+  }
+  &__icon {
+    color: $main;
+    font-size: 70px;
+  }
+  &__info {
+    white-space: normal;
+  }
+  &__title {
+    color: $main;
+  }
+  &__link {
+    &:hover {
+      color: white;
+      background-color: $main;
+    }
+  }
+  @media (min-width: 768px) {
+    &__glide {
+      max-width: 600px;
+    }
+  }
+  @media (min-width: 1024px) {
+    &__glide {
+      max-width: 900px;
+    }
+  }
+}

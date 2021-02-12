@@ -1,0 +1,16 @@
+.footer {
+  @include flex(column, space-evenly, center);
+  height: 100px;
+  &__list {
+    @include center;
+  }
+  &__item {
+    margin: 0 20px;
+  }
+  &__link {
+    color: grey;
+    &:hover {
+      color: black;
+    }
+  }
+}

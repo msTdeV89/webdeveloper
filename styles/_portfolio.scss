@@ -1,0 +1,42 @@
+.portfolio {
+  text-align: center;
+  &__projects {
+    @include flex(row, space-evenly, center);
+    flex-wrap: wrap;
+  }
+  &__project {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: whitesmoke 1px solid;
+    @include flex(column, space-around, center);
+  }
+  &__img {
+    width: 100%;
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+  &__badge {
+    font-size: 12px;
+    background-color: $main;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 10px;
+    @include boxshadow;
+  }
+  &__link {
+    &:hover {
+      background-color: $main;
+      color: white;
+    }
+  }
+  @media (min-width: 1024px) {
+    &__project {
+      margin-bottom: 60px;
+    }
+  }
+}

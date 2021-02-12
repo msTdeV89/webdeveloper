@@ -1,0 +1,107 @@
+@mixin pseudo {
+  content: "";
+  position: absolute;
+  width: 300%;
+  height: 150px;
+  top: -70px;
+  z-index: 2;
+  transform: rotate(-10deg);
+}
+.pricing {
+  text-align: center;
+  max-width: 100%;
+  @include gradient;
+  .section__header {
+    color: white;
+  }
+  &__bundles {
+    @include flex(row, space-evenly, center);
+    max-width: 1300px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  &__bundle {
+    @include boxshadow;
+    @include flex(column, space-evenly, center);
+    width: 100%;
+    max-width: 300px;
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    &--basic {
+      .pricing__title {
+        color: grey;
+      }
+      .pricing__link {
+        border: 1px solid grey;
+        color: grey;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+      &::before {
+        @include pseudo;
+        background-color: rgb(223, 223, 223);
+      }
+    }
+    &--standard {
+      .pricing__title {
+        color: white;
+      }
+      .pricing__link {
+        background-color: $main;
+        color: white;
+        &:hover {
+          background-color: $main-hover;
+        }
+      }
+      &::before {
+        @include pseudo;
+        background-color: $main;
+      }
+    }
+    &--premium {
+      .pricing__title {
+        color: black;
+      }
+      .pricing__link {
+        background-color: $premium;
+        border: none;
+        color: black;
+        &:hover {
+          background-color: $premium-hover;
+          color: black;
+        }
+      }
+      &::before {
+        @include pseudo;
+        background-color: $premium;
+      }
+    }
+  }
+  &__bundle > * {
+    margin: 15px 0;
+    z-index: 3;
+  }
+  &__title {
+    text-transform: uppercase;
+    color: $main;
+  }
+  &__item {
+    margin: 10px 0;
+    &--additional {
+      color: $main;
+      font-weight: bold;
+    }
+  }
+  &__link {
+    &:hover {
+      background-color: $main;
+      color: white;
+    }
+  }
+}

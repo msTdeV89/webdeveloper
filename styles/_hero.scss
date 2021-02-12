@@ -1,0 +1,50 @@
+.hero {
+  height: 80vh;
+  padding: 60px 40px 0;
+  position: relative;
+  @include gradient;
+  @include flex(column, center, center);
+  text-align: center;
+  color: white;
+  &__title {
+    text-transform: uppercase;
+    @include textshadow;
+    font-size: 30px;
+  }
+  &__subtitle {
+    font-weight: normal;
+    margin: 30px 0;
+    @include textshadow;
+    line-height: 30px;
+  }
+  &__link {
+    background-color: $premium;
+    @include boxshadow;
+    color: black;
+    z-index: 1;
+    &:hover {
+      background-color: $premium-hover;
+    }
+  }
+  &__waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    width: 100%;
+    svg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @media (min-width: 1024px) {
+    &__waves {
+      height: 40%;
+    }
+    &__link {
+      margin-top: 150px;
+    }
+  }
+}
